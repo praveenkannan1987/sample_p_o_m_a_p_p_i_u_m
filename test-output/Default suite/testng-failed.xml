@@ -3,18 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="testcases.TC02_ChangeProfile">
+      <class name="testcases.TC05_AddBatches">
         <methods>
+          <include name="setValues"/>
           <include name="afterTest"/>
           <include name="beforeSuite"/>
-          <include name="login" invocation-numbers="0"/>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
+          <include name="login" invocation-numbers="0"/>
           <include name="beforeMethod"/>
           <include name="afterSuite"/>
-          <include name="setValues"/>
         </methods>
-      </class> <!-- testcases.TC02_ChangeProfile -->
+      </class> <!-- testcases.TC05_AddBatches -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

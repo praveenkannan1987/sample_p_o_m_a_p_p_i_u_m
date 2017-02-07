@@ -665,4 +665,23 @@ public boolean launchApp(String appPackage, String appActivity, String deviceNam
 	return false;
 }
 
+public void clickXpathUsingActions(String xpath){
+	try {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(driver.findElement(By.xpath(xpath)));
+		actions.click();
+		
+		actions.build().perform();
+		reportStep("The element is clicked successfully with "+xpath, "PASS");
+
+	} catch (NoSuchElementException e) {
+		reportStep("The element could not be clicked with Xpath:"+xpath, "FAIL");
+	} catch (Exception e) {
+		reportStep("Unknown exception occured while clicking with Xpath:"+xpath, "FAIL");
+	}
+
+}
+
 }
